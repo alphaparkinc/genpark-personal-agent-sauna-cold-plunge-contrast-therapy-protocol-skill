@@ -1,0 +1,64 @@
+{
+  "name": "genpark-personal-agent-sauna-cold-plunge-contrast-therapy-protocol-skill",
+  "version": "1.0.0",
+  "title": "Sauna & Cold Plunge Contrast Therapy Longevity Protocol Skill",
+  "description": "Norepinephrine & heat shock protein (HSP70) activation modeling, core body temperature delta tracking, and cardiovascular contrast hydrotherapy scheduler. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "sauna-protocol",
+    "cold-plunge",
+    "contrast-therapy",
+    "heat-shock-proteins",
+    "norepinephrine",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "design_contrast_therapy_session",
+      "description": "Calculate optimal round durations and temperature targets for Finnish sauna (80-90\u00b0C) and cold plunge (10-15\u00b0C) to maximize norepinephrine secretion without blunting hypertrophy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "primary_goal": {
+            "type": "string",
+            "enum": [
+              "cardiovascular_longevity",
+              "acute_dopamine_norepinephrine_boost",
+              "metabolic_brown_fat_activation",
+              "post_workout_recovery"
+            ]
+          },
+          "hours_since_strength_training": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "primary_goal"
+        ]
+      }
+    },
+    {
+      "name": "audit_weekly_thermal_dosage",
+      "description": "Audit cumulative weekly sauna (target 57 mins) and cold water immersion (target 11 mins) against the Soberg Longevity Thresholds.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "logged_sauna_minutes": {
+            "type": "integer"
+          },
+          "logged_cold_plunge_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "logged_sauna_minutes",
+          "logged_cold_plunge_minutes"
+        ]
+      }
+    }
+  ]
+}
